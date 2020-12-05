@@ -1,0 +1,143 @@
+@import "HBuilderX-variables";
+// scss-docs-start import-stack
+// Configuration
+@import "functions";
+@import "variables";
+@import "mixins";
+@import "utilities";
+
+/* stylelint-disable selector-no-qualifying-type */
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  // margin: 0; // 1
+  font-family: inherit;
+  @include font-size(inherit);
+  line-height: inherit;
+}
+
+textarea,
+input:not([type="button"]):not([type="checkbox"]):not([type="color"]):not([type="file"]):not([type="hidden"]):not([type="image"]):not([type="range"]):not([type="reset"]):not([type="submit"]):not([type="radio"]) {
+  display: block;
+  width: 100%;
+  padding: $input-padding-y $input-padding-x;
+  font-family: $input-font-family;
+  @include font-size($input-font-size);
+  font-weight: $input-font-weight;
+  line-height: $input-line-height;
+  color: $input-color;
+  background-color: $input-bg;
+  background-clip: padding-box;
+  border: 0 solid $input-border-color;
+  border-bottom-width: $input-border-width;
+  &:focus {
+    border-color: $input-focus-border-color;
+    outline: 0;
+  }
+  &::placeholder {
+    color: $input-placeholder-color;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+  &:disabled,
+  &[readonly] {
+    background-color: $input-disabled-bg;
+    border-color: $input-disabled-border-color;
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    opacity: 1;
+  }
+}
+
+textarea {
+  min-height: $input-height;
+  border-width: $input-border-width;
+}
+
+input {
+  &[type="radio"],
+  &[type="checkbox"] {
+    width: $form-check-input-width;
+    height: $form-check-input-width;
+    margin-top: ($line-height-base - $form-check-input-width) / 2; // line-height minus check height
+    vertical-align: top;
+    background-color: $form-check-input-bg;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: $form-check-input-border;
+    // stylelint-disable-next-line property-no-vendor-prefix
+    -webkit-appearance: none;
+    appearance: none;
+    // color-adjust: exact; // Keep themed appearance for print
+    color-adjust: exact;
+    @include transition($form-check-transition);
+
+    &:active {
+      filter: $form-check-input-active-filter;
+    }
+
+    &:focus {
+      // border-color: $form-check-input-focus-border;
+      outline: 0;
+      // box-shadow: $form-check-input-focus-box-shadow;
+    }
+
+    &:checked {
+      background-color: $form-check-input-checked-bg-color;
+      background-image: escape-svg($form-check-input-checked-bg-image);
+      border-color: $form-check-input-checked-border-color;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      filter: none;
+      opacity: $form-check-input-disabled-opacity;
+    }
+  }
+
+  &[type="checkbox"] {
+    @include border-radius($form-check-input-border-radius);
+  }
+
+  &[type="radio"] {
+    @include border-radius($form-check-radio-border-radius);
+  }
+}
+
+select {
+  display: block;
+  width: 100%;
+  padding:
+    $form-select-padding-y
+    ($form-select-padding-x + $form-select-indicator-padding)
+    $form-select-padding-y $form-select-padding-x;
+  font-family: $form-select-font-family;
+  @include font-size($form-select-font-size);
+  font-weight: $form-select-font-weight;
+  line-height: $form-select-line-height;
+  color: $form-select-color;
+  vertical-align: middle;
+  background-color: $form-select-bg;
+  background-image: escape-svg($form-select-indicator);
+  background-repeat: no-repeat;
+  background-position: $form-select-bg-position;
+  background-size: $form-select-bg-size;
+  border: 0 solid $input-border-color;
+  border-bottom-width: $input-border-width;
+  @include border-radius(0);
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-appearance: none;
+  &:focus {
+    border-color: $form-select-focus-border-color;
+    outline: 0;
+  }
+
+  &:disabled {
+    color: $form-select-disabled-color;
+    background-color: $form-select-disabled-bg;
+    border-color: $form-select-disabled-border-color;
+  }
+}

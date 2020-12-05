@@ -1,0 +1,41 @@
+$variable-prefix: hx- !default;
+// $enable-grid-classes: false;
+$font-size-base: .8125rem !default;
+$font-family-sans-serif: "Microsoft Yahei", "PingFang SC", "Helvetica Neue",
+  helvetica, arial, sans-serif !default;
+$primary: #3aad4f !default;
+$gutters: () !default;
+$colors: () !default;
+$grid-breakpoints: (
+  xs: 0,
+) !default;
+$theme-colors: (
+  "primary": $primary,
+) !default;
+$container-max-widths: () !default;
+$grid-gutter-width: 1.25rem !default;
+
+$paragraph-margin-bottom: 0 !default;
+
+$form-label-color: #2d2d2d !default;
+$form-label-font-weight: 400 !default;
+
+$input-bg: transparent !default;
+$input-border-color: #e5e5e5 !default;
+$input-focus-border-color: $primary !default;
+$input-padding-x: .325rem !default;
+
+$form-text-margin-top: .625rem !default;
+$form-text-color: #919191 !default;
+
+$form-check-transition: background-color .15s ease-in-out,
+  background-position .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+$form-select-bg-size: 8px 8px !default;
+$form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 1024 1024'><path d='M960 213.3L512 810.7 64 213.3h896z' fill='#{$primary}'></path></svg>") !default;
+
+$popover-border-radius: 3px !default;
+$popover-border-color: #e8e0ca !default;
+$popover-box-shadow: 0 0 8px 0 rgba(55, 49, 29, .15) !default;
+$popover-body-padding-y: 0 !default;
+$popover-body-padding-x: .25rem !default;

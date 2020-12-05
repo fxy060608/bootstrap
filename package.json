@@ -18,6 +18,7 @@
     "Twitter, Inc."
   ],
   "scripts": {
+    "css-hx-compile": "sass --style expanded --no-source-map --no-error-css scss/HBuilderX.scss:dist/css/HBuilderX.css scss/HBuilderX-reset.scss:dist/css/HBuilderX-reset.css",
     "start": "npm-run-all --parallel watch docs-serve",
     "bundlewatch": "bundlewatch --config .bundlewatch.config.json",
     "css": "npm-run-all css-compile css-prefix css-rtl css-minify",

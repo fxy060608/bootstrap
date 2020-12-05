@@ -1,9 +1,66 @@
 @import "forms/labels";
 @import "forms/form-text";
-@import "forms/form-control";
-@import "forms/form-select";
+// @import "forms/form-control";
+// @import "forms/form-select";
 @import "forms/form-check";
-@import "forms/form-range";
-@import "forms/floating-labels";
-@import "forms/input-group";
-@import "forms/validation";
+// @import "forms/form-range";
+// @import "forms/floating-labels";
+// @import "forms/input-group";
+// @import "forms/validation";
+
+.required {
+  &::before {
+    display: inline-block;
+    margin-right: .5em;
+    color: #f37777;
+    content: "*";
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.col-form-label {
+  text-align: right;
+}
+
+.form-check ~ .form-text {
+  margin-top: 0;
+}
+
+.custom-option {
+  display: block;
+  width: 100%;
+  padding: .375rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0 solid rgb(211, 195, 148, .47);
+  border-bottom-width: 1px;
+  &:hover {
+    cursor: pointer;
+    background-color: #fffbea;
+  }
+  &.active {
+    color: #3aad4f;
+    &::before {
+      position: absolute;
+      left: 10px;
+      width: 16px;
+      height: 16px;
+      content: "";
+      background-image:
+        escape-svg(
+          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$primary}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 10l3 3l6-6'/></svg>")
+        );
+    }
+  }
+}
+
+.popover-body .custom-option:last-child {
+  border-bottom-width: 0;
+}
