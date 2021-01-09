@@ -45,9 +45,10 @@ input:not([type="button"]):not([type="checkbox"]):not([type="color"]):not([type=
   &:disabled,
   &[readonly] {
     background-color: $input-disabled-bg;
-    border-color: $input-disabled-border-color;
+    // border-color: $input-disabled-border-color;
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
     opacity: 1;
+    border-bottom-width: 0;
   }
 }
 
@@ -136,8 +137,9 @@ select {
   }
 
   &:disabled {
-    color: $form-select-disabled-color;
+    background-image: none;
     background-color: $form-select-disabled-bg;
-    border-color: $form-select-disabled-border-color;
+    // border-color: $form-select-disabled-border-color;
+    border-bottom-width: 0;
   }
 }

@@ -36,8 +36,9 @@ input:not([type=button]):not([type=checkbox]):not([type=color]):not([type=file])
 textarea:disabled, textarea[readonly],
 input:not([type=button]):not([type=checkbox]):not([type=color]):not([type=file]):not([type=hidden]):not([type=image]):not([type=range]):not([type=reset]):not([type=submit]):not([type=radio]):disabled,
 input:not([type=button]):not([type=checkbox]):not([type=color]):not([type=file]):not([type=hidden]):not([type=image]):not([type=range]):not([type=reset]):not([type=submit]):not([type=radio])[readonly] {
-  background-color: #e9ecef;
+  background-color: #f3f3f3;
   opacity: 1;
+  border-bottom-width: 0;
 }
 
 textarea {
@@ -112,6 +113,7 @@ select:focus {
   outline: 0;
 }
 select:disabled {
-  color: #6c757d;
-  background-color: #e9ecef;
+  background-image: none;
+  background-color: #f3f3f3;
+  border-bottom-width: 0;
 }
